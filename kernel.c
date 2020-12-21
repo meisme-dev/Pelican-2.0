@@ -1,4 +1,4 @@
-#include "sys/drivers/vga/vga.c"
-int kinit(){
+#include "drivers/vga/vga.c"
+void kinit(){
     print(5, "hello");
 }

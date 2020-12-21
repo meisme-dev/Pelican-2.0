@@ -12,7 +12,7 @@ prep:
 	mkdir -p isodir/boot/grub
 	mkdir -p build
 	as --32 boot.s -o build/boot.o
-	gcc -m32 -c kernel.c -o build/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -masm=intel
+	i686-elf-gcc -m32 -c kernel.c -o build/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -masm=intel
 	ld -m elf_i386 -T linker.ld build/kernel.o build/boot.o -o Pelican.bin
 	./grub.sh
 	grub-mkrescue -o Pelican.iso isodir
